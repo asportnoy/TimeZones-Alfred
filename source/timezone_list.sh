@@ -139,7 +139,7 @@ if [[ $time_search =~ ^[0-9:]+(am|pm|a|p)?$ ]] ; then
     if [ "$is_pm" = true ]; then
         hours=$(echo $time_search | cut -c1-2)
         minutes=$(echo $time_search | cut -c3-)
-        adjusted_hours="$((hours + 12))"
+        adjusted_hours="$((10#$hours + 12))"
         time_search="$adjusted_hours$minutes"
     fi    
     
